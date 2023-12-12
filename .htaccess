@@ -1,8 +1,0 @@
-<IfModule mod_rewrite.c> 
-  RewriteEngine On 
-  RewriteBase /pub/logisoft-sample/
-  RewriteRule ^\/pub\/logisoft-sample\/guide\/page\.tsx$ - [L] 
-  RewriteCond %{REQUEST_FILENAME} !-f 
-  RewriteCond %{REQUEST_FILENAME} !-d 
-  RewriteRule . /pub/logisoft-sample/guide/page.tsx [L] 
-</IfModule>
