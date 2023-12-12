@@ -1,2 +1,13 @@
-@import "@unocss/reset/tailwind.css";
+@import '@unocss/reset/tailwind.css';
 @unocss all;
+@import 'style/fonts/pretendard/style.css';
+
+/* init */
+html,
+body {
+  font-family: 'Pretendard', '맑은고딕', 'Malgun Gothic', '돋움', Dotum,
+    'Apple Gothic', sans-serif !important;
+  text-decoration: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}

@@ -1,4 +1,4 @@
-const UnoCSS = require("@unocss/webpack").default;
+const UnoCSS = require('@unocss/webpack').default;
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -13,7 +13,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   devIndicators: {
-    buildActivityPosition: "bottom-right",
+    buildActivityPosition: 'bottom-right',
   },
 };
 
