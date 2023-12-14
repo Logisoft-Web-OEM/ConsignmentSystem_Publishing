@@ -1,0 +1,20 @@
+[
+  {
+    "depth1": "공통",
+    "below": [
+      {
+        "id": "",
+        "depth2": "",
+        "depth3": "",
+        "depth4": "",
+        "depth5": "",
+        "depth6": "",
+        "path": "/",
+        "status": "",
+        "create": "",
+        "update": "",
+        "log": [{ "date": "2024.01.15", "text": "내용" }]
+      }
+    ]
+  }
+]
