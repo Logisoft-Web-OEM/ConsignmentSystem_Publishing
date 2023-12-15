@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-export default function Dropdown({
-  selected,
-  setSelected,
-  item,
-}: any) {
+interface DropdownProps {
+  selected?: any;
+  setSelected?: any;
+  item?: any;
+}
+export default function Dropdown(props: DropdownProps) {
   const [dropdownState, setDropdownState] = useState(false);
   const [rotate, setRotate] = useState<boolean>(false);
+  const { selected, setSelected, item } = props;
 
   const handleDropdownClick = () => {
     setDropdownState(!dropdownState);
@@ -43,20 +45,24 @@ export default function Dropdown({
   return (
     <>
       <div>
-        <button onClick={() => handleDropdownClick()} className="dropdown-button">
+        <button
+          onClick={() => handleDropdownClick()}
+          className="dropdown-button"
+        >
           {selected ? selected : "선택하세요"}
-          <img 
-            src="/ico-dropdown-dark.svg" 
-            onClick={() => setRotate(!rotate)} 
-            className={`dropdown-arrow ${dropdownState ? "dropdown-arrow-active" : "dropdown-arrow"}`}
+          <img
+            src="/ico-dropdown-dark.svg"
+            onClick={() => setRotate(!rotate)}
+            className={`dropdown-arrow ${
+              dropdownState ? "dropdown-arrow-active" : "dropdown-arrow"
+            }`}
           />
         </button>
-        <ul className={`dropdown-content ${dropdownState ? "isBlack" : "isNone"}`}>
+        <ul
+          className={`dropdown-content ${dropdownState ? "isBlack" : "isNone"}`}
+        >
           {item.map((item: any) => (
-
-            <li
-              className="dropdown-item"
-            >
+            <li className="dropdown-item">
               <a
                 href={item.url}
                 onClick={(e) => {
