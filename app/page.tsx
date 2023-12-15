@@ -5,31 +5,31 @@
 // 화면ID로 검색
 // -----------------------------------------------
 
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Page() {
-  const datas = require('@/public/_dummy/guidelist.json');
+  const datas = require("@/public/_dummy/guidelist.json");
   const date = new Date();
   const formatDate = (date: any) => {
     const d = new Date(date),
-      month = '' + (d.getMonth() + 1),
-      day = '' + d.getDate(),
+      month = "" + (d.getMonth() + 1),
+      day = "" + d.getDate(),
       year = d.getFullYear();
 
-    return [year, month, day].join('.');
+    return [year, month, day].join(".");
   };
   const headerTitle = [
-    'ID',
-    'depth2',
-    'depth3',
-    'depth4',
-    'depth5',
-    'depth6',
-    'path',
-    'status',
-    'create',
-    'update',
-    'log',
+    "ID",
+    "depth2",
+    "depth3",
+    "depth4",
+    "depth5",
+    "depth6",
+    "path",
+    "status",
+    "create",
+    "update",
+    "log",
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function Page() {
       <h1 className="m-4 text-gray text-2xl font-bold">로지소프트 WEB OEM</h1>
       {/* component button */}
       <div className="flex items-center ml-4">
-        <Link href="/component/">
+        <Link href="/component/" target="_blank">
           <button
             type="button"
             className="flex items-center justify-center px-3 py-1.5 mr-2 text-white text-sm rounded-md font-semibold border-0 bg-cyan-500 hover:bg-cyan-700"
@@ -121,13 +121,13 @@ export default function Page() {
                             className={`
                               p-1 rounded focus:outline-none
                             ${
-                              subdata.status === '작업중'
-                                ? 'bg-blue-600'
-                                : subdata.status === '수정중'
-                                  ? 'bg-red-500'
-                                  : subdata.status === '작업완료'
-                                    ? 'bg-gray-400'
-                                    : ''
+                              subdata.status === "작업중"
+                                ? "bg-blue-600"
+                                : subdata.status === "수정중"
+                                  ? "bg-red-500"
+                                  : subdata.status === "작업완료"
+                                    ? "bg-gray-400"
+                                    : ""
                             }
                             `}
                           >
@@ -149,7 +149,7 @@ export default function Page() {
                                 className={`
                                 ${
                                   formatDate(date) === item.date &&
-                                  'text-red-600 font-bold'
+                                  "text-red-600 font-bold"
                                 }`}
                                 key={index}
                               >
