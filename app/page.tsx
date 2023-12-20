@@ -5,31 +5,31 @@
 // 화면ID로 검색
 // -----------------------------------------------
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Page() {
-  const datas = require("@/public/_dummy/guidelist.json");
+  const datas = require('@/public/_dummy/guidelist.json');
   const date = new Date();
   const formatDate = (date: any) => {
     const d = new Date(date),
-      month = "" + (d.getMonth() + 1),
-      day = "" + d.getDate(),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
       year = d.getFullYear();
 
-    return [year, month, day].join(".");
+    return [year, month, day].join('.');
   };
   const headerTitle = [
-    "ID",
-    "depth2",
-    "depth3",
-    "depth4",
-    "depth5",
-    "depth6",
-    "path",
-    "status",
-    "create",
-    "update",
-    "log",
+    'ID',
+    'depth2',
+    'depth3',
+    'depth4',
+    'depth5',
+    'depth6',
+    'path',
+    'status',
+    'create',
+    'update',
+    'log',
   ];
 
   return (
@@ -81,8 +81,11 @@ export default function Page() {
               </colgroup>
               <thead>
                 <tr className="text-xs font-bold border border-solid border-gray-200  bg-zinc-200">
-                  {headerTitle.map((title) => (
-                    <th className="p-1.5 border border-solid border-gray-200">
+                  {headerTitle.map((title, index: any) => (
+                    <th
+                      className="p-1.5 border border-solid border-gray-200"
+                      key={index}
+                    >
                       {title}
                     </th>
                   ))}
@@ -121,13 +124,13 @@ export default function Page() {
                             className={`
                               p-1 rounded focus:outline-none
                             ${
-                              subdata.status === "작업중"
-                                ? "bg-blue-600"
-                                : subdata.status === "수정중"
-                                  ? "bg-red-500"
-                                  : subdata.status === "작업완료"
-                                    ? "bg-gray-400"
-                                    : ""
+                              subdata.status === '작업중'
+                                ? 'bg-blue-600'
+                                : subdata.status === '수정중'
+                                  ? 'bg-red-500'
+                                  : subdata.status === '작업완료'
+                                    ? 'bg-gray-400'
+                                    : ''
                             }
                             `}
                           >
@@ -149,7 +152,7 @@ export default function Page() {
                                 className={`
                                 ${
                                   formatDate(date) === item.date &&
-                                  "text-red-600 font-bold"
+                                  'text-red-600 font-bold'
                                 }`}
                                 key={index}
                               >
@@ -168,7 +171,7 @@ export default function Page() {
         ))}
         <div className="fixed bottom-0 left-0 p-2 box-border bg-gray-600/40 w-full">
           {datas.map((data: any, index: any) => (
-            <Link href={`#section-${index}`}>
+            <Link href={`#section-${index}`} key={index}>
               <button
                 type="button"
                 className="px-3 py-1.5 mr-2 text-sm font-semibold leading-6 text-white rounded-md bg-gray-600 hover:bg-gray-800"
