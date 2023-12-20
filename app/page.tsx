@@ -37,7 +37,7 @@ export default function Page() {
       <h1 className="m-4 text-gray text-2xl font-bold">로지소프트 WEB OEM</h1>
       {/* component button */}
       <div className="flex items-center ml-4">
-        <Link href="/component/" target="_blank">
+        <Link href="/" target="_blank">
           <button
             type="button"
             className="flex items-center justify-center px-3 py-1.5 mr-2 text-white text-sm rounded-md font-semibold border-0 bg-cyan-500 hover:bg-cyan-700"
